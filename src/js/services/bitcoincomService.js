@@ -17,13 +17,6 @@ angular.module('copayApp.services').factory('bitcoincomService', function(gettex
     credentials.BITPAY_API_URL = "https://bitpay.com";
   };
 
-  var cashGamesItem = {
-    name: 'games',
-    title: gettextCatalog.getString('Bitcoin Games'),
-    icon: 'icon-games',
-    href: 'https://games.bitcoin.com/?utm_source=WalletApp&utm_medium=' + os
-  };
-
   var newsItem = {
     name: 'news',
     title: gettextCatalog.getString('News'),
@@ -70,7 +63,7 @@ angular.module('copayApp.services').factory('bitcoincomService', function(gettex
     name: 'bitcoincomTwitter',
     title: gettextCatalog.getString('Bitcoin.com Twitter'),
     icon: 'icon-twitter-white',
-    href: 'https://twitter.com/BTCTN'
+    href: 'https://twitter.com/BitcoinCom'
   };
 
   var _getBitPay = function(endpoint) {
@@ -99,9 +92,6 @@ angular.module('copayApp.services').factory('bitcoincomService', function(gettex
   };
 
   var register = function() {
-    if (!platformInfo.isAndroid) { // To comply with Google Play policies
-      nextStepsService.register(cashGamesItem);
-    }
     nextStepsService.register(newsItem);
     nextStepsService.register(toolsItem);
     nextStepsService.register(priceChartItem);
